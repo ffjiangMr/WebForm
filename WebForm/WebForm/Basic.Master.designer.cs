@@ -10,24 +10,24 @@
 namespace WebForm {
     
     
-    public partial class Default {
+    public partial class Basic {
         
         /// <summary>
-        /// form1 control.
+        /// ListType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ListType;
         
         /// <summary>
-        /// mySpan control.
+        /// ListEntries control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl mySpan;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ListEntries;
     }
 }

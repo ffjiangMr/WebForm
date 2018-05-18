@@ -1,0 +1,16 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Basic.master.cs" Inherits="WebForm.Basic" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    This is a list of 
+    <asp:ContentPlaceHolder ID="ListType" runat="server"></asp:ContentPlaceHolder>
+    <ul>
+        <asp:ContentPlaceHolder ID="ListEntries" runat="server"></asp:ContentPlaceHolder>
+    </ul>
+</body>
+</html>

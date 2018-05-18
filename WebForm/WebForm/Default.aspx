@@ -9,6 +9,24 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <%-- I Live in:
+            <%: GetCity() %>--%>
+            Here are some cities:
+            <hr />
+            <asp:Literal Text="<%$ AppSettings:cityMessage %>" runat="server"></asp:Literal>
+            <hr />
+            <span id="mySpan" name="mySpan" runat="server"></span>
+            <hr />
+            <span>Today is : <%: GetDayOfWeek() %></span>
+            <ul>
+                <asp:Repeater ItemType="System.String" SelectMethod="GetCity" runat="server">
+                    <ItemTemplate>
+                        <li>
+                            <%# Item %>
+                        </li>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </ul>
         </div>
     </form>
 </body>
