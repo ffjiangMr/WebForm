@@ -10,14 +10,16 @@ namespace WebForm
     public class Global : System.Web.HttpApplication
     {
 
-        public Global()
-        {
-            BeginRequest += this.HandleEvent;
-            EndRequest += this.HandleEvent;
-            LogRequest += this.HandleEvent;
-            PreRequestHandlerExecute += this.HandleEvent;
-            PostRequestHandlerExecute += this.HandleEvent;
-        }
+        private DateTime startTime;
+
+        //public Global()
+        //{
+        //    BeginRequest += this.HandleEvent;
+        //    EndRequest += this.HandleEvent;
+        //    LogRequest += this.HandleEvent;
+        //    PreRequestHandlerExecute += this.HandleEvent;
+        //    PostRequestHandlerExecute += this.HandleEvent;
+        //}
 
         protected void HandleEvent(Object sender, EventArgs e)
         {
@@ -55,7 +57,7 @@ namespace WebForm
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-
+            startTime = Context.Timestamp;
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
@@ -63,14 +65,23 @@ namespace WebForm
 
         }
 
-        protected void Application_Error(object sender, EventArgs e)
+        protected void Application_EndRequest(Object sender, EventArgs e)
         {
-
+            double elapsed = DateTime.Now.Subtract(startTime).TotalMilliseconds;
+            System.Diagnostics.Debug.WriteLine(String.Format($"Duration : {Request.RawUrl} {elapsed}ms"));
         }
 
-        protected void Session_End(object sender, EventArgs e)
+        protected void Application_PostAuthenticateRequest(object sender, EventArgs e)
         {
+            if ((Request.Url.LocalPath == "/Params.aspx") && (!User.Identity.IsAuthenticated))
+            {
+                Context.AddError(new UnauthorizedAccessException());
+            }
+        }
 
+        protected void Application_LogRequest(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine($"Request for {Request.RawUrl} - code {Response.StatusCode}");
         }
 
         protected void Application_End(object sender, EventArgs e)
