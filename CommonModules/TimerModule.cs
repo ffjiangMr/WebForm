@@ -3,10 +3,16 @@ using System.Web;
 
 namespace CommonModules
 {
+    public class TimeEventArgs : EventArgs
+    {
+        public Double Duration { get; set; }
+    }
+
     public class TimerModule : IHttpModule
     {
 
         private DateTime startTime;
+        public event EventHandler<TimeEventArgs> RequestTimed;
 
         /// <summary>
         /// You will need to configure this module in the Web.config file of your
@@ -31,7 +37,7 @@ namespace CommonModules
         private void HandleEvent(Object sender, EventArgs args)
         {
             var app = sender as HttpApplication;
-            switch(app.Context.CurrentNotification)
+            switch (app.Context.CurrentNotification)
             {
                 case RequestNotification.BeginRequest:
                     startTime = app.Context.Timestamp;
@@ -39,6 +45,10 @@ namespace CommonModules
                 case RequestNotification.EndRequest:
                     double elapsed = DateTime.Now.Subtract(startTime).TotalMilliseconds;
                     System.Diagnostics.Debug.WriteLine($"Duration: {app.Request.RawUrl} {elapsed}ms.");
+                    if (this.RequestTimed != null)
+                    {
+                        this.RequestTimed(this, new TimeEventArgs() { Duration = elapsed });
+                    }
                     break;
                 default:
                     break;
