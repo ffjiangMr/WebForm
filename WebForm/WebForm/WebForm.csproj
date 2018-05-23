@@ -121,6 +121,12 @@
       <DependentUpon>Colors.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommonModules\CommonModules.csproj">
+      <Project>{42d67e19-d7fa-4e46-8b96-22e92ac0c9ab}</Project>
+      <Name>CommonModules</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
