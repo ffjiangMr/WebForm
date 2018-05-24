@@ -79,6 +79,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="ListModules.aspx" />
     <Content Include="Params.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -103,6 +104,12 @@
     <Compile Include="EventCollection.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ListModules.aspx.cs">
+      <DependentUpon>ListModules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListModules.aspx.designer.cs">
+      <DependentUpon>ListModules.aspx</DependentUpon>
     </Compile>
     <Compile Include="Params.aspx.cs">
       <DependentUpon>Params.aspx</DependentUpon>
