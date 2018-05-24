@@ -81,6 +81,7 @@
     <Content Include="Global.asax" />
     <Content Include="ListModules.aspx" />
     <Content Include="Params.aspx" />
+    <Content Include="Price.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +112,7 @@
     <Compile Include="ListModules.aspx.designer.cs">
       <DependentUpon>ListModules.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LocalModule.cs" />
     <Compile Include="Params.aspx.cs">
       <DependentUpon>Params.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -119,6 +121,13 @@
       <DependentUpon>Params.aspx</DependentUpon>
     </Compile>
     <Compile Include="ParamsModule.cs" />
+    <Compile Include="Price.aspx.cs">
+      <DependentUpon>Price.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Price.aspx.designer.cs">
+      <DependentUpon>Price.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Colors.aspx.cs">
       <DependentUpon>Colors.aspx</DependentUpon>
