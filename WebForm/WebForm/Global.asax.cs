@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonModules;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,19 @@ namespace WebForm
     {
 
         private DateTime startTime;
+
+        public override void Init()
+        {
+            IHttpModule module = Modules["AverageTime"];
+            if (module is AverageTimeModule)
+            {
+                ((AverageTimeModule)module).NewAverages += (src, args) =>
+                {
+                    Response.Write(String.Format("<h3>Ave time {0:F2}ms</h3>", args.AverageTime));
+                };
+            }
+            base.Init();
+        }
 
         //public Global()
         //{
