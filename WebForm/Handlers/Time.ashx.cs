@@ -13,8 +13,28 @@ namespace Handlers
 
         public void ProcessRequest(HttpContext context)
         {
-            context.Response.ContentType = "text/plain";
-            context.Response.Write("Hello World");
+
+            String time = DateTime.Now.ToShortTimeString();
+
+            if (IsAjaxRequest(context.Request))
+            {
+                context.Response.ContentType = "application/json";
+                context.Response.Write(String.Format($"time {time}"));
+            }
+            else
+            {
+                context.Response.ContentType = "text/html";
+                context.Response.Write(String.Format($"<span>{time}</span>"));
+            }
+
+            //context.Response.ContentType = "text/plain";
+            //context.Response.Write("Hello World");
+        }
+
+        private Boolean IsAjaxRequest(HttpRequest request)
+        {
+            return (request.Headers["X-Requested-With"] == "XMLHttpRequest") ||
+                    (request["X-Requested-With"] == "XMLHttpRequest");
         }
 
         public bool IsReusable
