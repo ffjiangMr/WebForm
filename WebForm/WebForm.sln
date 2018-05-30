@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonModules", "..\CommonM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handlers", "Handlers\Handlers.csproj", "{8A03435C-9B35-4BC5-A32C-EDB7B9A5980F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestControl", "RequestControl\RequestControl.csproj", "{49CC776D-836E-4B9F-A352-47ED8B224BDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8A03435C-9B35-4BC5-A32C-EDB7B9A5980F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A03435C-9B35-4BC5-A32C-EDB7B9A5980F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A03435C-9B35-4BC5-A32C-EDB7B9A5980F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49CC776D-836E-4B9F-A352-47ED8B224BDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49CC776D-836E-4B9F-A352-47ED8B224BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49CC776D-836E-4B9F-A352-47ED8B224BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49CC776D-836E-4B9F-A352-47ED8B224BDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
