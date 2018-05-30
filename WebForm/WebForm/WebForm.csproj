@@ -136,6 +136,7 @@
     <Compile Include="Colors.aspx.designer.cs">
       <DependentUpon>Colors.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFormHandlerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CommonModules\CommonModules.csproj">

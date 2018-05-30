@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Web.SessionState;
 
 namespace WebForm
 {
-    public partial class Default : CommonPageBase
+    public partial class Default : CommonPageBase,IRequiresSessionState
     {
         protected void Page_Load(object sender, EventArgs e)
         {

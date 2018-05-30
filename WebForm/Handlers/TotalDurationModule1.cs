@@ -10,7 +10,7 @@ namespace Handlers
         public Int32 Requests { get; set; }
     }
 
-    public class TotalDurationModule1 : IHttpModule
+    public class TotalDurationModule : IHttpModule
     {
 
         private Double totalTIme = 0;
@@ -44,7 +44,7 @@ namespace Handlers
             {
                 context.Items["total_time"] = this.totalTIme;
             }
-            else
+            else if (context.Handler is IRequiresDurationData)
             {
                 totalTIme = (Double)context.Items["total_time"];
                 requestCount++;

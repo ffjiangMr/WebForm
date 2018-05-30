@@ -8,7 +8,7 @@ namespace Handlers
     /// <summary>
     /// Summary description for Time
     /// </summary>
-    public class Time : IHttpHandler
+    public class Time : IHttpHandler, IRequiresDurationData
     {
 
         public void ProcessRequest(HttpContext context)
@@ -25,6 +25,13 @@ namespace Handlers
             {
                 context.Response.ContentType = "text/html";
                 context.Response.Write(String.Format($"<span>{time}</span>"));
+            }
+
+            Double? totalTime = context.Items["total_time"] as Double?;
+            if (totalTime != null)
+            {
+                totalTime += (DateTime.Now.Subtract(context.Timestamp)).TotalMilliseconds;
+                context.Items["total_time"] = totalTime;
             }
 
             //context.Response.ContentType = "text/plain";

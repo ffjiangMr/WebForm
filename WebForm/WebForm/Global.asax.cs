@@ -61,7 +61,7 @@ namespace WebForm
         protected void Application_Start(object sender, EventArgs e)
         {
             EventCollection.Add(EventSource.Application, "Start");
-            Application["message"] = "Application Event";
+            //Application["message"] = "Application Event";
         }
 
         //protected void Session_Start(object sender, EventArgs e)
@@ -69,21 +69,30 @@ namespace WebForm
 
         //}
 
-        //protected void Application_BeginRequest(object sender, EventArgs e)
-        //{
-        //    startTime = Context.Timestamp;
-        //}
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            EventCollection.Add(EventSource.Application, "BeginRequest");
+        }
 
         //protected void Application_AuthenticateRequest(object sender, EventArgs e)
         //{
 
         //}
 
-        //protected void Application_EndRequest(Object sender, EventArgs e)
-        //{
-        //    double elapsed = DateTime.Now.Subtract(startTime).TotalMilliseconds;
-        //    System.Diagnostics.Debug.WriteLine(String.Format($"Duration : {Request.RawUrl} {elapsed}ms"));
-        //}
+        protected void Application_EndRequest(Object sender, EventArgs e)
+        {
+            EventCollection.Add(EventSource.Application, "ENdRequest");
+        }
+
+        protected void Application_PreRequestHandledExecute(Object sender, EventArgs args)
+        {
+            EventCollection.Add(EventSource.Application, "PreRequestHandledExecute");
+        }
+
+        protected void Application_PostRequestHandledExecute(Object sender, EventArgs args)
+        {
+            EventCollection.Add(EventSource.Application, "PostRequestHandledExecute");
+        }
 
         //protected void Application_PostAuthenticateRequest(object sender, EventArgs e)
         //{
