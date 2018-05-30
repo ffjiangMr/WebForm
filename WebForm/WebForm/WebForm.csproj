@@ -81,7 +81,9 @@
     <Content Include="Global.asax" />
     <Content Include="ListModules.aspx" />
     <Content Include="Params.aspx" />
+    <Content Include="PostBack.aspx" />
     <Content Include="Price.aspx" />
+    <Content Include="ViewCounter.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +123,13 @@
       <DependentUpon>Params.aspx</DependentUpon>
     </Compile>
     <Compile Include="ParamsModule.cs" />
+    <Compile Include="PostBack.aspx.cs">
+      <DependentUpon>PostBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostBack.aspx.designer.cs">
+      <DependentUpon>PostBack.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Price.aspx.cs">
       <DependentUpon>Price.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -135,6 +144,12 @@
     </Compile>
     <Compile Include="Colors.aspx.designer.cs">
       <DependentUpon>Colors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCounter.ascx.cs">
+      <DependentUpon>ViewCounter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCounter.ascx.designer.cs">
+      <DependentUpon>ViewCounter.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebFormHandlerFactory.cs" />
   </ItemGroup>

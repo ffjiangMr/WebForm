@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebForm.Default" %>
 
+<%@ Register TagName="Counter" TagPrefix="Events" Src="~/ViewCounter.ascx" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -7,6 +8,7 @@
     <title></title>
 </head>
 <body>
+    <Events:Counter ID="counter" OnCount="HandleEvent" runat="server" />
     <form id="form1" runat="server">
         <div>
             <%-- I Live in:
