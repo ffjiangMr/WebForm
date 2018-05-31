@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handlers", "Handlers\Handle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestControl", "RequestControl\RequestControl.csproj", "{49CC776D-836E-4B9F-A352-47ED8B224BDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "State", "State\State.csproj", "{BDEC7D2F-ABB9-4CAF-A9F4-CB792470209F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{49CC776D-836E-4B9F-A352-47ED8B224BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49CC776D-836E-4B9F-A352-47ED8B224BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49CC776D-836E-4B9F-A352-47ED8B224BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDEC7D2F-ABB9-4CAF-A9F4-CB792470209F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDEC7D2F-ABB9-4CAF-A9F4-CB792470209F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDEC7D2F-ABB9-4CAF-A9F4-CB792470209F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDEC7D2F-ABB9-4CAF-A9F4-CB792470209F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
