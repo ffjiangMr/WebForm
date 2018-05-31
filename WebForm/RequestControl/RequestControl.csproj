@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="CurrentTimeHandler.ashx" />
     <None Include="packages.config" />
+    <Content Include="SourceViewHandler.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -99,6 +100,9 @@
     </Compile>
     <Compile Include="SecondPage.aspx.designer.cs">
       <DependentUpon>SecondPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SourceViewHandler.ashx.cs">
+      <DependentUpon>SourceViewHandler.ashx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>

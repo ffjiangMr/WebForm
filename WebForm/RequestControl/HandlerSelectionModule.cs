@@ -22,13 +22,23 @@ namespace RequestControl
             // Below is an example of how you can handle LogRequest event and provide 
             // custom logging implementation for it
             context.LogRequest += new EventHandler(OnLogRequest);
-            context.PostResolveRequestCache += (src, args) => {
+            context.PostResolveRequestCache += (src, args) =>
+            {
                 if (context.Request.RequestType == "POST")
                 {
                     switch (context.Request.Form["choice"])
                     {
                         case "remamhandler":
                             context.Context.RemapHandler(new CurrentTimeHandler());
+                            break;
+                        case "execute":
+                            String[] paths = { "Default.aspx", "SecondPage.aspx" };
+                            foreach (var item in paths)
+                            {
+                                context.Response.Write(String.Format($"<div>This is the {item} response</div>"));
+                                context.Server.Execute(item);
+                            }
+                            context.CompleteRequest();
                             break;
                     }
                 }

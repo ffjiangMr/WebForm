@@ -10,6 +10,9 @@
     <form id="form1" runat="server">
         <div>
             This is SecondPage.aspx
+            <p>Handle:<%: Context.Handler %></p>
+            <p>Current Handler<%: Context.CurrentHandler %></p>
+            <p>PreviewHandler:<%: Context.PreviousHandler %></p>
         </div>
     </form>
 </body>

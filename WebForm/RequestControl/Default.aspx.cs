@@ -24,6 +24,9 @@ namespace RequestControl
                         Response.StatusCode = 301;
                         Context.ApplicationInstance.CompleteRequest();
                         break;
+                    case "transferpage":
+                        Server.Transfer("/SecondPage.aspx");
+                        break;
                 }
             }
         }
