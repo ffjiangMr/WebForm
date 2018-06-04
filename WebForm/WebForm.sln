@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestControl", "RequestCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "State", "State\State.csproj", "{BDEC7D2F-ABB9-4CAF-A9F4-CB792470209F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chase", "Chase\Chase.csproj", "{3277191E-E3A8-47CE-9109-358B42DA358C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{BDEC7D2F-ABB9-4CAF-A9F4-CB792470209F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDEC7D2F-ABB9-4CAF-A9F4-CB792470209F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDEC7D2F-ABB9-4CAF-A9F4-CB792470209F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3277191E-E3A8-47CE-9109-358B42DA358C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3277191E-E3A8-47CE-9109-358B42DA358C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3277191E-E3A8-47CE-9109-358B42DA358C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3277191E-E3A8-47CE-9109-358B42DA358C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
