@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO.Ports;
+using System.Web.Profile;
 
 namespace State
 {
@@ -14,16 +15,20 @@ namespace State
         private String user;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            this.user = Request.Form["requestUser"] ?? "Joe";
         }
 
         protected Int32 GetCounter()
         {
-            Application.Lock();
-            Int32 result = (Int32)(Application["counter"] ?? 0);
-            Application["counter"] = ++result;
-            Application.UnLock();
-            return result;
+            ProfileBase profile = ProfileBase.Create(this.user);
+            Int32 counter = (Int32)(profile["counter"]);
+            profile["counter"] = ++counter;
+            profile.Save();
+            //Application.Lock();
+            //Int32 result = (Int32)(Application["counter"] ?? 0);
+            //Application["counter"] = ++result;
+            //Application.UnLock();
+            return counter;
         }
 
     }
