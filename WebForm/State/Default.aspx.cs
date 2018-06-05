@@ -11,11 +11,11 @@ namespace State
 {
     public partial class Default : System.Web.UI.Page
     {
-        private Int32 counter = 0;
+        //private Int32 counter = 0;
         private String user;
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.user = Request.Form["requestUser"] ?? "Joe";
+            this.user = Request.Form["requestedUser"] ?? "Joe";
         }
 
         protected Int32 GetCounter()
@@ -28,6 +28,13 @@ namespace State
             //Int32 result = (Int32)(Application["counter"] ?? 0);
             //Application["counter"] = ++result;
             //Application.UnLock();
+            return counter;
+        }
+
+        protected Int32 GetSessionCounter()
+        {
+            Int32 counter = (Int32)(Session["counter"] ?? 0);
+            Session["counter"] = ++counter;
             return counter;
         }
 

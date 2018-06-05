@@ -17,7 +17,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            This page has been display <%: GetCounter() %> time(s).
+            This page has been display <%: GetCounter() %> time(s) for user and <%: GetSessionCounter() %> time(s) for this session.
         </div>
         <div class="nameContainer"> 
             <input id="requestedUser" value="Joe" runat="server" />
