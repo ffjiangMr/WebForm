@@ -10,16 +10,7 @@
 namespace State {
     
     
-    public partial class Default {
-        
-        /// <summary>
-        /// Head1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+    public partial class CityAndColor {
         
         /// <summary>
         /// form1 control.
@@ -31,12 +22,21 @@ namespace State {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// requestedUser control.
+        /// colorSelect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText requestedUser;
+        protected global::System.Web.UI.WebControls.DropDownList colorSelect;
+        
+        /// <summary>
+        /// citySelect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList citySelect;
     }
 }

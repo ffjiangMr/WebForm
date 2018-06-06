@@ -11,23 +11,29 @@ namespace State
 {
     public partial class Default : System.Web.UI.Page
     {
-        //private Int32 counter = 0;
+        private Int32 counter = 0;
         private String user;
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.user = Request.Form["requestedUser"] ?? "Joe";
+            HttpCookie incomingCookie = Request.Cookies["Counter"];
+            this.counter = incomingCookie == null ? 0 : Int32.Parse(incomingCookie.Value);
+            this.counter++;
+            Response.Cookies.Add(new HttpCookie("counter", counter.ToString()));
+            //this.counter = (Int32)(ViewState["counter"] ?? 0);
+            //ViewState["counter"] = ++this.counter;
+            //this.user = Request.Form["requestedUser"] ?? "Joe";
         }
 
         protected Int32 GetCounter()
         {
-            ProfileBase profile = ProfileBase.Create(this.user);
-            Int32 counter = (Int32)(profile["counter"]);
-            profile["counter"] = ++counter;
-            profile.Save();
+            //ProfileBase profile = ProfileBase.Create(this.user);
+            //Int32 counter = (Int32)(profile["counter"]);
+            //profile["counter"] = ++counter;
+            //profile.Save();
             //Application.Lock();
             //Int32 result = (Int32)(Application["counter"] ?? 0);
             //Application["counter"] = ++result;
-            //Application.UnLock();
+            //Application.UnLock();          
             return counter;
         }
 
