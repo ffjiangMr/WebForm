@@ -71,6 +71,7 @@
     <Content Include="CitiesControl.ascx" />
     <Content Include="CitiesList.html" />
     <Content Include="CurrentTime.ascx" />
+    <Content Include="Default.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +88,13 @@
     </Compile>
     <Compile Include="CurrentTime.ascx.designer.cs">
       <DependentUpon>CurrentTime.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
