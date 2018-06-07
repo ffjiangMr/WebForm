@@ -9,6 +9,7 @@ namespace Caching
 {
     public partial class Default : System.Web.UI.Page
     {
+        private static readonly String CACHE_KEY = "codebehind_ts";
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -16,7 +17,16 @@ namespace Caching
 
         protected String GetTime()
         {
-            return DateTime.Now.ToLongTimeString();
+            String ts = (String)Cache[CACHE_KEY];
+            if (ts == null)
+            {
+                Cache[CACHE_KEY] = ts = DateTime.Now.ToLongTimeString();
+            }
+            else
+            {
+                ts +=  "<b>(Cache)</b>";
+            }
+            return ts;
         }
     }
 }

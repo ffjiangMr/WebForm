@@ -19,7 +19,7 @@
         The time from the page is <%: DateTime.Now.ToLongTimeString() %>
     </div>
     <div class="panel">
-        The time from the code-behind page is <%: GetTime() %>
+        The time from the code-behind page is <%= GetTime() %>
     </div>
     <div class="panel">
         <CC:Time runat="server" />
