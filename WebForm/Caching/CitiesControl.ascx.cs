@@ -34,9 +34,11 @@ namespace Caching
                 aggDep.Add(new CacheDependency(MapPath(fileName)));
                 aggDep.Add(new RequestCountDependency(3));
                 Cache.Insert(HTML_CACHE_KEY, html,
+                    aggDep,
+                    DateTime.Now.AddMinutes(30),
+                    Cache.NoSlidingExpiration
                     //new CacheDependency(MapPath(fileName))
-                    //new RequestCountDependency(3)
-                    aggDep
+                    //new RequestCountDependency(3)                   
                     );
             }
             else
