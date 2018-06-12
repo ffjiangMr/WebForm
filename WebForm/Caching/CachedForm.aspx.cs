@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 
 namespace Caching
 {
@@ -20,6 +21,11 @@ namespace Caching
         }
 
         protected String GetTimeStamp()
+        {
+            return DateTime.Now.ToLongTimeString();
+        }
+
+        protected static String GetDynamicTimeStamp(HttpContext context)
         {
             return DateTime.Now.ToLongTimeString();
         }
