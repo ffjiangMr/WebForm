@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CachedForm.aspx" />
+    <Content Include="CitiedForm.aspx" />
     <Content Include="CitiesControl.ascx" />
     <Content Include="CitiesList.html" />
     <Content Include="ControlOverride.aspx" />
@@ -87,6 +88,13 @@
     </Compile>
     <Compile Include="CachedForm.aspx.designer.cs">
       <DependentUpon>CachedForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CitiedForm.aspx.cs">
+      <DependentUpon>CitiedForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CitiedForm.aspx.designer.cs">
+      <DependentUpon>CitiedForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="CitiesControl.ascx.cs">
       <DependentUpon>CitiesControl.ascx</DependentUpon>
@@ -109,6 +117,7 @@
     <Compile Include="CurrentTime.ascx.designer.cs">
       <DependentUpon>CurrentTime.ascx</DependentUpon>
     </Compile>
+    <Compile Include="CustomOutputCache.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
