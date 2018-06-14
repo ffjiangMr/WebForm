@@ -11,7 +11,18 @@ namespace ErrorHandling
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack && (Request.Form["pageAction"] == "error"))
+            {
+                throw new ArgumentNullException();
+            }
+        }
 
+        protected void Page_Error(object sender, EventArgs e)
+        {
+            if (Context.Error is FormatException)
+            {
+                Response.Redirect($"/ComponentError.aspx?errorSource={Request.Path}&errorType={Context.Error.GetType()}");
+            }
         }
     }
 }

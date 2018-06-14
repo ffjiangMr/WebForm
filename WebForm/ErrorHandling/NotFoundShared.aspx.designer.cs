@@ -10,24 +10,24 @@
 namespace ErrorHandling {
     
     
-    public partial class Default {
+    public partial class NotFoundShared {
         
         /// <summary>
-        /// form1 control.
+        /// errorSrc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorSrc;
         
         /// <summary>
-        /// sumControl control.
+        /// requestedURL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::ErrorHandling.SumControl sumControl;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl requestedURL;
     }
 }
