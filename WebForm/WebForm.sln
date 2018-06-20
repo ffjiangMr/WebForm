@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorHandling", "ErrorHandl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathsAndURLs", "PathsAnd URLs\PathsAndURLs.csproj", "{2DD346F5-8CEB-4FE9-9CA7-06AA86D37FB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Routing", "Routing\Routing.csproj", "{77D01FFD-D02B-4222-93A5-9A089A8465D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{2DD346F5-8CEB-4FE9-9CA7-06AA86D37FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DD346F5-8CEB-4FE9-9CA7-06AA86D37FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DD346F5-8CEB-4FE9-9CA7-06AA86D37FB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77D01FFD-D02B-4222-93A5-9A089A8465D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77D01FFD-D02B-4222-93A5-9A089A8465D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77D01FFD-D02B-4222-93A5-9A089A8465D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77D01FFD-D02B-4222-93A5-9A089A8465D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
