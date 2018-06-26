@@ -70,9 +70,11 @@
   <ItemGroup>
     <Content Include="Calc.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="GetTest.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Loop.aspx" />
     <Content Include="Out.aspx" />
+    <Content Include="PostTest.aspx" />
     <Content Include="Store\Cart.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -92,6 +94,14 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FormDataConstraint.cs" />
+    <Compile Include="GetTest.aspx.cs">
+      <DependentUpon>GetTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetTest.aspx.designer.cs">
+      <DependentUpon>GetTest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -108,6 +118,13 @@
     </Compile>
     <Compile Include="Out.aspx.designer.cs">
       <DependentUpon>Out.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostTest.aspx.cs">
+      <DependentUpon>PostTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostTest.aspx.designer.cs">
+      <DependentUpon>PostTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Store\Cart.aspx.cs">
