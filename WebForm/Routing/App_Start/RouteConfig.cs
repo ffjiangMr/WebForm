@@ -7,12 +7,24 @@ using System.Web.Routing;
 namespace Routing
 {
     public class RouteConfig
-    { 
+    {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.RouteExistingFiles = true;
+            //routes.MapPageRoute("oldToNew", "Loop.aspx", "~/Default.aspx", false, null, new RouteValueDictionary() { { "httpMethod", new HttpMethodConstraint("GET") } });
+            //var wr = new Route("store/{target}",new PageRouteHandler("~/Default.aspx"));
+            //wr.RouteExistingFiles = false;
+            //routes.Add(wr);
+            //routes.Add("stop", new Route("methodtest", new StopRoutingHandler()));
+            //routes.Ignore("methodtest");
+            routes.Add("browser", new BrowserRoute("browser", new Dictionary<Browser, String>() { { Browser.CHROME, "~/Calc.aspx" }, { Browser.IE10, "~/Loop.aspx" }, { Browser.OTHER, "~/Default.aspx" } }));
+            routes.MapPageRoute("store", "store/{target}", "~/Default.aspx");
             routes.MapPageRoute("default", "", "~/Default.aspx");
-            routes.MapPageRoute("posttest","methodtest","~/PostTest.aspx",false,null,new RouteValueDictionary() { { "httpMethod",new HttpMethodConstraint("POST")} });
-            routes.MapPageRoute("gettest", "methodtest", "~/GetTest.aspx", false, null, null);
+            routes.Add("apress", new Route("apress", null, null, new RouteValueDictionary() { { "target", "http://apress.com" } }, new RedirectionRouteHandler()));
+            routes.MapPageRoute("posttest", "methodtest", "~/PostTest.aspx", false, null, new RouteValueDictionary() { { "httpMethod", new HttpMethodConstraint("POST") }, { "city", new FormDataConstraint("London") } });
+            routes.Add("stop", new Route("methodtest", null, new RouteValueDictionary { { "httpMethod", new HttpMethodConstraint("POST") } }, new StopRoutingHandler()));
+            routes.Ignore("methodtest", new { httpMethod = new HttpMethodConstraint("POST") });
+            routes.MapPageRoute("gettest", "methodtest", "~/GetTest.aspx", false, null, new RouteValueDictionary { { "httpMethod", new HttpMethodConstraint("GET", "PUT", "DELETE", "HEAD", "OPTIONS", "PATCH", "CONNECT") } });
             //routes.MapPageRoute("cart1", "cart", "~/Store/Cart.aspx");
             //routes.MapPageRoute("cart2", "app/shopping/finish", "~/Store/Cart.aspx");
             //routes.MapPageRoute("default1", "{app}/default", "~/Default.aspx", false, null, new RouteValueDictionary() { { "app", "accounts|billing|payments" } });
