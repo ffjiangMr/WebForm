@@ -7,7 +7,8 @@ namespace Test
         static void Main(string[] args)
         {
             Console.WriteLine((Int32)Test.DEMO);
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello  World!");
+            Console.Read();
         }
     }
 
