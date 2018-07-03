@@ -17,12 +17,15 @@ namespace ManagingUsers.Account
                 String user = Request["user"];
                 String password = Request["password"];
                 String action = Request["action"];
-                if ((action == "login") && (user == "Joe") && (password == "secret"))
+                if ((action == "login") && Membership.ValidateUser(user,password))
                 {
                     FormsAuthentication.RedirectFromLoginPage(user, false);
                 }
                 else
                 {
+                    //Membership.CreateUser("Joe", "secret","joe@apress.com","What month were you born?" ,"January",false,out _);
+                    //Membership.CreateUser("Jacqui", "supersecret", "jacqui@apress.com", "What is your favorite color?", "Green", false, out _);
+                    //Membership
                     message.Style["visibility"] = "visible";
                     //FormsAuthentication.SignOut();
                     //Response.Redirect(Request.Path);
