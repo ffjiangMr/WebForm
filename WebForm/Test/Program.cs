@@ -8,6 +8,7 @@ namespace Test
         {
             Console.WriteLine((Int32)Test.DEMO);
             Console.WriteLine("Hello  World!");
+            Console.WriteLine(DateTime.Now.ToString("HH.mm.ss"));
             Console.Read();
         }
     }

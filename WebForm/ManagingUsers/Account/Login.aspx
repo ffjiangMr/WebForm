@@ -22,6 +22,11 @@
         button {
             margin: 10px 10px 0 0;
         }
+        span.error {
+        color:red;
+        border:solid double red;
+        visibility:collapse;
+        }
     </style>
 </head>
 <body>
@@ -30,6 +35,9 @@
     </div>
     <div class="details">The current user is :<%: GetUser() %></div>
     <form id="form1" runat="server">
+        <span class="error" id="message" runat="server">
+            Incorect username or password try again.
+        </span>
         <div>
             <label for="user">User:</label>
             <input id="user" name="user" />

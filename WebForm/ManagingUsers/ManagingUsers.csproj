@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Login.aspx" />
+    <Content Include="Admin\Open.aspx" />
     <Content Include="Admin\Restricted.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -82,6 +83,13 @@
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Open.aspx.cs">
+      <DependentUpon>Open.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Open.aspx.designer.cs">
+      <DependentUpon>Open.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Restricted.aspx.cs">
       <DependentUpon>Restricted.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -90,6 +98,14 @@
       <DependentUpon>Restricted.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Auth.Master.cs">
+      <DependentUpon>Auth.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auth.Master.designer.cs">
+      <DependentUpon>Auth.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AuthModule.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -101,8 +117,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Web.config" />
+    <Content Include="Auth.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

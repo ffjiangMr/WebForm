@@ -19,13 +19,21 @@ namespace ManagingUsers.Account
                 String action = Request["action"];
                 if ((action == "login") && (user == "Joe") && (password == "secret"))
                 {
-                    FormsAuthentication.SetAuthCookie(user, false);
+                    FormsAuthentication.RedirectFromLoginPage(user, false);
                 }
                 else
                 {
-                    FormsAuthentication.SignOut();
+                    message.Style["visibility"] = "visible";
+                    //FormsAuthentication.SignOut();
+                    //Response.Redirect(Request.Path);
                 }
-                Response.Redirect(Request.Path);
+                //Response.Redirect(Request.Path);
+            }
+            else if (Request.IsAuthenticated)
+            {
+                Response.StatusCode = 403;
+                Response.SuppressContent = true;
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 

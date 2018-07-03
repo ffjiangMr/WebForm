@@ -1,12 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Restricted.aspx.cs" Inherits="ManagingUsers.Admin.Restricted" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Restricted.aspx.cs" Inherits="ManagingUsers.Admin.Restricted" MasterPageFile="~/Auth.Master" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
+<asp:Content ContentPlaceHolderID="bodyContent" runat="server">
     <p>This is /Admin/Restricted.aspx</p>
-</body>
-</html>
+</asp:Content>

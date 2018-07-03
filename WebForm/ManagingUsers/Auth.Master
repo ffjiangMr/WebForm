@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Auth.master.cs" Inherits="ManagingUsers.Auth" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <style>
+        div.auth {
+        text-align:right;
+        }
+            div.auth > * {
+            margin-left:5px;            
+            }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <span id="authGreeting" runat="server"><%: GetGreeting() %></span>
+            <button id="authAction" name="authAction" value="auth" type="submit" runat="server">Log In</button>
+            </div>
+        <div>
+            <asp:ContentPlaceHolder ID="bodyContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
