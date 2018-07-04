@@ -104,7 +104,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Account\Change.aspx" />
     <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Recover.aspx" />
+    <Content Include="Account\Register.aspx" />
     <Content Include="Admin\Open.aspx" />
     <Content Include="Admin\Restricted.aspx" />
     <Content Include="Default.aspx" />
@@ -112,12 +115,33 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\Change.aspx.cs">
+      <DependentUpon>Change.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Change.aspx.designer.cs">
+      <DependentUpon>Change.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Recover.aspx.cs">
+      <DependentUpon>Recover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Recover.aspx.designer.cs">
+      <DependentUpon>Recover.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Open.aspx.cs">
       <DependentUpon>Open.aspx</DependentUpon>

@@ -47,7 +47,8 @@
             <input id="password" name="password" type="password" />
             <div>
                 <button name="action" value="login" type="submit">Log In</button>
-                <button name="action" value="logout" type="submit">Log Out</button>
+                <%--<button name="action" value="logout" type="submit">Log Out</button>--%>
+                <a href="Register.aspx">Create an Account</a>
             </div>
         </div>
     </form>
