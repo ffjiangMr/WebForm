@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagingUsers", "ManagingUs
 EndProject
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "ManagingUsers.Azure", "ManagingUsers.Azure\ManagingUsers.Azure.ccproj", "{2ADA2D60-4EB2-41DB-9AC9-81570A5E3072}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigFiles", "ConfigFiles\ConfigFiles.csproj", "{5390494F-B9EB-4856-9377-18262D814BF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{2ADA2D60-4EB2-41DB-9AC9-81570A5E3072}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ADA2D60-4EB2-41DB-9AC9-81570A5E3072}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ADA2D60-4EB2-41DB-9AC9-81570A5E3072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5390494F-B9EB-4856-9377-18262D814BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5390494F-B9EB-4856-9377-18262D814BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5390494F-B9EB-4856-9377-18262D814BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5390494F-B9EB-4856-9377-18262D814BF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
