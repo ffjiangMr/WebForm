@@ -68,10 +68,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\FolderForm.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\FolderForm.aspx.cs">
+      <DependentUpon>FolderForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FolderForm.aspx.designer.cs">
+      <DependentUpon>FolderForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
