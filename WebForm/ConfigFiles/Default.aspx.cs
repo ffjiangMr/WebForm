@@ -22,16 +22,21 @@ namespace ConfigFiles
         {
 
             Configuration config = WebConfigurationManager.OpenWebConfiguration(Request.Path);
-            foreach (ConfigurationSectionGroup group in config.SectionGroups)
-            {
-                foreach (String str in processSectionGroup(group))
-                {
-                    yield return str;
-                }
-            }
-
+            NewUserDefaultsSection section = (NewUserDefaultsSection)config.Sections["newUserDefaults"];
+            yield return $"city:{section.City}";
+            yield return $"country:{section.Country}";
+            yield return $"language:{section.Language}";
+            yield return $"regionCode:{section.RegionCode}";
+            
             #region
 
+            //foreach (ConfigurationSectionGroup group in config.SectionGroups)
+            //{
+            //    foreach (String str in processSectionGroup(group))
+            //    {
+            //        yield return str;
+            //    }
+            //}                   
             //Configuration config = WebConfigurationManager.OpenWebConfiguration(Request.Path);
             //SystemWebSectionGroup group = config.SectionGroups["system.web"] as SystemWebSectionGroup;
             //yield return $"debug = { group.Compilation.Debug}";
@@ -84,6 +89,7 @@ namespace ConfigFiles
             //}
             // yield return "This is a placeholder.";
             #endregion
+
         }
 
         private Boolean DebugEnabled

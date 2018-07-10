@@ -90,6 +90,9 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="NewUserDefaultsSection.cs" />
+    <Compile Include="Place.cs" />
+    <Compile Include="PlaceCollection.cs" />
+    <Compile Include="PlaceSection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
