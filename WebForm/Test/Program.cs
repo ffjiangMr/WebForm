@@ -6,6 +6,9 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            String a = "哇哈哈哈aaaa";
+            var b = a.ToLower();
+            var c = a.ToLowerInvariant();
             Console.WriteLine((Int32)Test.DEMO);
             Console.WriteLine("Hello  World!");
             Console.WriteLine(DateTime.Now.ToString("HH.mm.ss"));

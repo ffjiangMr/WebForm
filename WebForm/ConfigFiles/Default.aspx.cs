@@ -12,6 +12,7 @@ namespace ConfigFiles
 {
     public partial class Default : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -19,18 +20,46 @@ namespace ConfigFiles
 
         public IEnumerable<String> GetConfig()
         {
-            Object configObject = WebConfigurationManager.GetWebApplicationSection("system.web/compilation");
-            CompilationSection sectionHandler = configObject as CompilationSection;
-            if (sectionHandler != null)
+
+            Configuration config = WebConfigurationManager.OpenWebConfiguration(Request.Path);
+            foreach (ConfigurationSectionGroup group in config.SectionGroups)
             {
-                yield return $"Debug = {sectionHandler.Debug}";
-                yield return $"targetFramework = {sectionHandler.TargetFramework}";
-                yield return $"batch = {sectionHandler.Batch}";                
+                foreach (String str in processSectionGroup(group))
+                {
+                    yield return str;
+                }
             }
-            else
-            {
-                yield return $"Unexpected object type:{configObject.GetType()}";
-            }
+
+            #region
+
+            //Configuration config = WebConfigurationManager.OpenWebConfiguration(Request.Path);
+            //SystemWebSectionGroup group = config.SectionGroups["system.web"] as SystemWebSectionGroup;
+            //yield return $"debug = { group.Compilation.Debug}";
+            //yield return $"targetFramework = {group.Compilation.TargetFramework}";
+            //yield return $"batch = {group.Compilation.Batch}";
+
+
+            //if (DebugEnabled)
+            //{
+            //    yield return "Debug is enabled.";
+            //}
+            //else
+            //{
+            //    yield return "Debug is disabled.";
+            //}
+
+            //Object configObject = WebConfigurationManager.GetWebApplicationSection("system.web/compilation");
+            //CompilationSection sectionHandler = configObject as CompilationSection;
+            //if (sectionHandler != null)
+            //{
+            //    yield return $"Debug = {sectionHandler.Debug}";
+            //    yield return $"targetFramework = {sectionHandler.TargetFramework}";
+            //    yield return $"batch = {sectionHandler.Batch}";                
+            //}
+            //else
+            //{
+            //    yield return $"Unexpected object type:{configObject.GetType()}";
+            //}
             //String csName = WebConfigurationManager.AppSettings["dbConnectionString"];
             //ConnectionStringSettings conString = WebConfigurationManager.ConnectionStrings[csName];
             //DbConnection dbConnect = DbProviderFactories.GetFactory(conString.ProviderName).CreateConnection();
@@ -54,6 +83,28 @@ namespace ConfigFiles
             //    yield return $"{key} = {WebConfigurationManager.AppSettings[key]}";
             //}
             // yield return "This is a placeholder.";
+            #endregion
+        }
+
+        private Boolean DebugEnabled
+        {
+            get
+            {
+                return (WebConfigurationManager.GetWebApplicationSection("system.web/compilation") as CompilationSection).Debug;
+            }
+        }
+
+        private IEnumerable<String> processSectionGroup(ConfigurationSectionGroup group)
+        {
+            yield return $"<b>Section Group: {group.Name}</b>";
+            foreach (ConfigurationSectionGroup innerGroup in group.SectionGroups)
+            {
+                processSectionGroup(innerGroup);
+            }
+            foreach (ConfigurationSection section in group.Sections)
+            {
+                yield return $"Section : { section.SectionInformation.Name}";
+            }
         }
     }
 }
