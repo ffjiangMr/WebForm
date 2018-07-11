@@ -14,7 +14,7 @@ namespace ConfigFiles
         [ConfigurationProperty("city", IsRequired = true)]
         public String City { get { return (String)this["city"]; } set { this["city"] = value; } }
 
-        [ConfigurationProperty("counrty", IsRequired = true)]
-        public String Country { get { return (String)this["counrty"]; } set { this["counrty"] = value; } }
+        [ConfigurationProperty("country", IsRequired = true)]
+        public String Country { get { return (String)this["country"]; } set { this["country"] = value; } }
     }
 }

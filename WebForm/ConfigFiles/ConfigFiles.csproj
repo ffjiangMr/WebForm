@@ -94,8 +94,10 @@
     <Compile Include="PlaceCollection.cs" />
     <Compile Include="PlaceSection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserAndPlaceSectionGroup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppSettings.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

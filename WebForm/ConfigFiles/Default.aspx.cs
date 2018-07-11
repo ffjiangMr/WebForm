@@ -20,15 +20,35 @@ namespace ConfigFiles
 
         public IEnumerable<String> GetConfig()
         {
-
             Configuration config = WebConfigurationManager.OpenWebConfiguration(Request.Path);
-            NewUserDefaultsSection section = (NewUserDefaultsSection)config.Sections["newUserDefaults"];
-            yield return $"city:{section.City}";
-            yield return $"country:{section.Country}";
-            yield return $"language:{section.Language}";
-            yield return $"regionCode:{section.RegionCode}";
-            
+            UserAndPlaceSectionGroup group = (UserAndPlaceSectionGroup)config.SectionGroups["customDefaults"];
+            PlaceSection place = group.Places;
+            Place defaultPlace = place.Places[place.Default];
+            yield return $"The default is {place.Default} (City{defaultPlace.City},Country:{defaultPlace.Country})";
+            foreach (Place p in place.Places)
+            {
+                yield return $"{p.City},{p.Country}";
+            }
             #region
+
+            //PlaceSection places = (PlaceSection)config.Sections["places"];
+            //Place defaultPlace = places.Places[places.Default];
+            //yield return $"The default is : {places.Default}(City:{defaultPlace.City},Country:{defaultPlace.Country})";
+            //foreach (Place p in places.Places)
+            //{
+            //    yield return $"{p.City} {p.Country}";
+            //}
+
+
+
+            //Configuration config = WebConfigurationManager.OpenWebConfiguration(Request.Path);
+            //NewUserDefaultsSection section = (NewUserDefaultsSection)config.Sections["newUserDefaults"];
+            //yield return $"city:{section.City}";
+            //yield return $"country:{section.Country}";
+            //yield return $"language:{section.Language}";
+            //yield return $"regionCode:{section.RegionCode}";
+
+
 
             //foreach (ConfigurationSectionGroup group in config.SectionGroups)
             //{
