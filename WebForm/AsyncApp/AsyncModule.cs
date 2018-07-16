@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Web;
 
 namespace AsyncApp
@@ -21,7 +22,15 @@ namespace AsyncApp
         {
             // Below is an example of how you can handle LogRequest event and provide 
             // custom logging implementation for it
-            context.LogRequest += new EventHandler(OnLogRequest);
+            //context.LogRequest += new EventHandler(OnLogRequest);
+            EventHandlerTaskAsyncHelper helper = new EventHandlerTaskAsyncHelper(async (src,args)=> {
+                if (context.Context.Request.Path == "/DisplayItemValue.aspx") {
+                    String content = await new WebClient().DownloadStringTaskAsync("http://asp.net");
+                    ((HttpApplication)src).Context.Items["length"] = content.Length;
+                    
+                }
+            });
+            context.AddOnBeginRequestAsync(helper.BeginEventHandler, helper.EndEventHandler);
         }
 
         #endregion
