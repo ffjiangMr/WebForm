@@ -1,8 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WorkingWithControls.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableViewState="false" CodeBehind="Default.aspx.cs" Inherits="WorkingWithControls.Default" %>
 
 <%@ Register TagPrefix="CC" TagName="UCButton" Src="~/ButtonCountUserControl.ascx" %>
-<%@ Register TagPrefix="SC" Assembly="WorkingWithControls"  Namespace="WorkingWithControls" %>
- 
+<%@ Register TagPrefix="SC" Assembly="WorkingWithControls" Namespace="WorkingWithControls" %>
+<%@ Register TagPrefix="CC" TagName="UCTriple" Src="~/TripleButtonControl.ascx" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -24,6 +25,15 @@
         </div>
         <CC:UCButton ID="userControl" runat="server"></CC:UCButton>
         <SC:ButtonCountServerControl ID="serverControl" runat="server"></SC:ButtonCountServerControl>
+        <CC:UCTriple ID="tripleControl" runat="server" />
+
+        <div>
+            UI Button presses:
+            <asp:Label ID="uiLabel" Font-Bold="true" Font-Size="Larger" runat="server" Text="0"> </asp:Label>
+        </div>
+        <div>
+            <asp:Button ID="uiButton" Text="Submit(UI)" OnClick="ButtonClick" runat="server" />
+        </div>
     </form>
 </body>
 </html>
