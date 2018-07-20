@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Colors.aspx.cs" Inherits="WorkingWithControls.Colors" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Colors.aspx.cs" Inherits="WorkingWithControls.Colors" ViewStateMode="Enabled" EnableViewState="true"%>
 
 <!DOCTYPE html>
 
