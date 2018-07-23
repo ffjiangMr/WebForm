@@ -33,9 +33,14 @@
                 </select>
             </div>
             <div>
-                Do you agree to the terms?
+                Pick a City:
                 <input type="radio" name="city" value="London" checked="checked" />London
-                <input type="radio" name="ciity" value="New York" title="New York" />New York
+                <input type="radio" name="city" value="New York" title="New York" />New York
+            </div>
+            <div>
+                Do you agree to the terms?
+                <input type="hidden" name="consent" value="false" />
+                <input type="checkbox"  name="consent" value="true"/>
             </div>
             <div>
                 <button type="submit" name="button" value="Button 1">Button 1</button>
