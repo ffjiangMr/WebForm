@@ -11,7 +11,18 @@ namespace WorkingWithForms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack)
+            {
+                try
+                {
+                    nameResult.InnerText = Request.Form["name"];
+                }
+                catch (HttpRequestValidationException )
+                {
+                    nameResult.InnerText = "Dangerous data!";
+                }
+                htmlResult.InnerText = Request.Unvalidated.Form["html"];
+            }
         }
     }
 }
