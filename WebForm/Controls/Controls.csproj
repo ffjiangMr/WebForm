@@ -85,6 +85,7 @@
     <Compile Include="Custom\BasicCacl.ascx.designer.cs">
       <DependentUpon>BasicCacl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Custom\ServerCalc.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

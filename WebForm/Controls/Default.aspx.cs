@@ -13,8 +13,8 @@ namespace Controls
         {
             if (Request.HttpMethod == "POST")
             {
-                Int32 firstVal = Int32.Parse(Request.Form["firstNumber"]);
-                Int32 secondVal = Int32.Parse(Request.Form["secondNumber"]);
+                //Int32 firstVal = Int32.Parse(Request.Form["firstNumber"]);
+                //Int32 secondVal = Int32.Parse(Request.Form["secondNumber"]);
                 //result.InnerText = (firstVal + secondVal).ToString();
             }
         }

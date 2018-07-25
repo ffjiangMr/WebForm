@@ -24,8 +24,24 @@
             <button type="submit">=</button>
             <span id="result" runat="server"></span>
         </div>--%>
+      <%--  <div>
+            <CC:Cacl ID="Calc" initial="100" runat="server">
+                <Calculations>
+                    <CC:Calculation operation="PLUS" value="10"></CC:Calculation>
+                    <CC:Calculation operation="MINU" value="20"></CC:Calculation>
+                </Calculations>
+            </CC:Cacl>
+            <CC:Cacl ID="Cacl" runat="server" FirstValue="100" SecondValue="5" Operation="MINU"></CC:Cacl>
+        </div>--%>
         <div>
-            <CC:Cacl id="Cacl" runat="server"></CC:Cacl>
+            <CC:ServerCalc Initial="100" runat="server">
+                <Calculations>
+                    <CC:Calculation operation="PLUS" value="10">
+                    </CC:Calculation>
+                    <CC:Calculation operation="MINU" value="20">
+                    </CC:Calculation>
+                </Calculations>
+            </CC:ServerCalc>
         </div>
     </form>
 </body>
