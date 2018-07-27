@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Xml.Serialization;
-using System.Runtime.Serialization;
 
 namespace ControlState.Custom
 {
 
     [Serializable]
     public class CounterControlState
-    {        
+    {
         public Int32 LeftValue { get; set; }
         public Int32 RightValue { get; set; }
     }
@@ -24,19 +16,70 @@ namespace ControlState.Custom
         public Int32 LeftValue { get; set; }
         public Int32 RightValue { get; set; }
 
+        protected void Page_Init(Object sender, EventArgs args)
+        {
+            Page.RegisterRequiresControlState(this);            
+        }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadStateData();
-            String button = GetValue("button");
-            if (button == GetId("left"))
+            if (IsPostBack)
             {
-                LeftValue++;
+                String button = GetValue("button");                
+                if (button == GetId("left"))
+                {
+                    LeftValue++;
+                }
+                else if (button == GetId("right"))
+                {
+                    RightValue++;
+                }
             }
-            else if (button == GetId("right"))
+
+            #region
+            //LoadStateData();
+            //String button = GetValue("button");
+            //if (button == GetId("left"))
+            //{
+            //    LeftValue++;
+            //}
+            //else if (button == GetId("right"))
+            //{
+            //    RightValue++;
+            //}
+            //SaveStateData();
+            #endregion
+
+        }
+
+        protected override object SaveControlState()
+        {
+            return new CounterControlState()
             {
-                RightValue++;
+                LeftValue = this.LeftValue,
+                RightValue = this.RightValue,
+            };
+        }
+
+        protected override void LoadControlState(object savedState)
+        {
+            CounterControlState state = savedState as CounterControlState;
+            if (state != null)
+            {
+                LeftValue = state.LeftValue;
+                RightValue = state.RightValue;
             }
-            SaveStateData();
+        }
+
+        protected override void LoadViewState(object savedState)
+        {
+            CounterControlState state = savedState as CounterControlState;
+            if (state != null)
+            {
+                LeftValue = state.LeftValue;
+                RightValue = state.RightValue;
+            }
         }
 
         private void LoadStateData()
@@ -47,6 +90,8 @@ namespace ControlState.Custom
                 LeftValue = state.LeftValue;
                 RightValue = state.RightValue;
             }
+
+            #region
             //Int32 temp;
             //if (Int32.TryParse(GetValue("left"), out temp))
             //{
@@ -58,6 +103,8 @@ namespace ControlState.Custom
             //}
             //LeftValue = (Session[GetSessionKey("left")] as Int32?) ?? LeftValue;
             //RightValue = (Session[GetSessionKey("reight")] as Int32?) ?? RightValue;
+            #endregion 
+
         }
 
         private void SaveStateData()
