@@ -33,8 +33,8 @@ namespace ControlState.Custom
         protected override void RenderContents(HtmlTextWriter writer)
         {
             writer.RenderBeginTag(HtmlTextWriterTag.Div);
-            String flag = this.stateful ? "state" : "New";
-            writer.Write($"time{timeStamp}{flag})");
+            String flag = this.stateful ? " State" : " New";
+            writer.Write($"time{timeStamp}{flag}");
             writer.RenderEndTag();
         }
     }
