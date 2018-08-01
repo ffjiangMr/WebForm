@@ -24,6 +24,17 @@ namespace ControlState
             {
                 ViewStateWorks = ViewState["state"] != null;
             }
+            ViewState["state"] = "some state data";
+        }
+
+        protected override object SaveControlState()
+        {
+            return "some control state data";
+        }
+
+        protected override void LoadControlState(object savedState)
+        {
+            ControlStateWorks = savedState != null;
         }
     }
 }

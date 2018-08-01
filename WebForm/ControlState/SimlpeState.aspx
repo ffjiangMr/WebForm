@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SimlpeState.aspx.cs" Inherits="ControlState.SimlpeState" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SimlpeState.aspx.cs" Inherits="ControlState.SimlpeState" EnableViewState="true" ViewStateEncryptionMode="Auto" ViewStateMode="Enabled" EnableViewStateMac="true"%>
 
 <!DOCTYPE html>
 
