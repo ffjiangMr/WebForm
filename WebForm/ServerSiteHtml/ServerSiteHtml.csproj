@@ -70,6 +70,11 @@
   <ItemGroup>
     <Content Include="BaseClass.aspx" />
     <Content Include="Container.aspx" />
+    <Content Include="CreateForm.aspx" />
+    <Content Include="Form5.aspx" />
+    <Content Include="Select.aspx" />
+    <Content Include="SimpleForm.aspx" />
+    <Content Include="Structure.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -87,7 +92,42 @@
     <Compile Include="Container.aspx.designer.cs">
       <DependentUpon>Container.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CreateForm.aspx.cs">
+      <DependentUpon>CreateForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateForm.aspx.designer.cs">
+      <DependentUpon>CreateForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.aspx.cs">
+      <DependentUpon>Form5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form5.aspx.designer.cs">
+      <DependentUpon>Form5.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Select.aspx.cs">
+      <DependentUpon>Select.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Select.aspx.designer.cs">
+      <DependentUpon>Select.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleForm.aspx.cs">
+      <DependentUpon>SimpleForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SimpleForm.aspx.designer.cs">
+      <DependentUpon>SimpleForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Structure.aspx.cs">
+      <DependentUpon>Structure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Structure.aspx.designer.cs">
+      <DependentUpon>Structure.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
