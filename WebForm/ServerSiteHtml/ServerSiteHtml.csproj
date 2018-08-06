@@ -72,8 +72,10 @@
     <Content Include="Container.aspx" />
     <Content Include="CreateForm.aspx" />
     <Content Include="Form5.aspx" />
+    <Content Include="HtmlTable.aspx" />
     <Content Include="Select.aspx" />
     <Content Include="SimpleForm.aspx" />
+    <Content Include="SimpleTable.aspx" />
     <Content Include="Structure.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -106,6 +108,13 @@
     <Compile Include="Form5.aspx.designer.cs">
       <DependentUpon>Form5.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HtmlTable.aspx.cs">
+      <DependentUpon>HtmlTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HtmlTable.aspx.designer.cs">
+      <DependentUpon>HtmlTable.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Select.aspx.cs">
       <DependentUpon>Select.aspx</DependentUpon>
@@ -120,6 +129,13 @@
     </Compile>
     <Compile Include="SimpleForm.aspx.designer.cs">
       <DependentUpon>SimpleForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleTable.aspx.cs">
+      <DependentUpon>SimpleTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SimpleTable.aspx.designer.cs">
+      <DependentUpon>SimpleTable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Structure.aspx.cs">
       <DependentUpon>Structure.aspx</DependentUpon>
