@@ -71,6 +71,7 @@
     <Content Include="BaseClass.aspx" />
     <Content Include="Container.aspx" />
     <Content Include="CreateForm.aspx" />
+    <Content Include="CreateTable.aspx" />
     <Content Include="Form5.aspx" />
     <Content Include="HtmlTable.aspx" />
     <Content Include="Select.aspx" />
@@ -100,6 +101,13 @@
     </Compile>
     <Compile Include="CreateForm.aspx.designer.cs">
       <DependentUpon>CreateForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTable.aspx.cs">
+      <DependentUpon>CreateTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateTable.aspx.designer.cs">
+      <DependentUpon>CreateTable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Form5.aspx.cs">
       <DependentUpon>Form5.aspx</DependentUpon>
