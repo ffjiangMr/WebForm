@@ -6,8 +6,9 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            String a = "哇哈哈哈aaaa";
-            var b = a.ToLower();
+            String a = "哇哈哈哈";
+            String b = "哇哈哈哈";
+            var result = b.Contains(a);           
             var c = a.ToLowerInvariant();
             Console.WriteLine((Int32)Test.DEMO);
             Console.WriteLine("Hello  World!");
