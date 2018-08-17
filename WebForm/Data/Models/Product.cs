@@ -5,7 +5,13 @@ using System.Web;
 
 namespace Data.Models
 {
+    [Serializable]
     public class Product
     {
+        public Int32 ProductID { get; set; }
+        public String Name { get; set; }
+        public String Description { get; set; }
+        public Decimal Price { get; set; }
+        public String Category { get; set; }
     }
 }
