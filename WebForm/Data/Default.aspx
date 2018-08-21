@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Data.Default" %>
+
 <%@ Register Assembly="Data" Namespace="Data.Controls" TagPrefix="CS" %>
 <!DOCTYPE html>
 
@@ -57,15 +58,15 @@
         </div>
         <div>
             Filter &nbsp<b>:</b>&nbsp 
-            <CS:DataSelect ID="dSelect" ItemType="Data.Models.Product" SelectMethod="GetCategories" runat="server" >
-                <ItemTemplate>
-                    <option>
+            <CS:DataSelect ID="dSelect" ItemType="Data.Models.Product" SelectMethod="GetCategories" runat="server">
+                <itemtemplate>
+                    <option <%# Container.GenerateSelect(Item.Category) %>>
                         <%#: Item.Category %>
                     </option>
-                </ItemTemplate>
+                </itemtemplate>
             </CS:DataSelect>
-           <%-- <CS:DataSelect ID="dSelect" runat="server" SelectMethod="GetCategories" />--%>
-           <%-- <asp:DropDownList ID="ddList" SelectMethod="GetCategories" runat="server" ItemType="System.String">
+            <%-- <CS:DataSelect ID="dSelect" runat="server" SelectMethod="GetCategories" />--%>
+            <%-- <asp:DropDownList ID="ddList" SelectMethod="GetCategories" runat="server" ItemType="System.String">
             </asp:DropDownList>--%>
             <%-- <select name="filterSelect">
                 <asp:Repeater SelectMethod="GetCategories" runat="server" ItemType="Data.CategoryView">
