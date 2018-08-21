@@ -1,0 +1,27 @@
+﻿body {
+    font-family: "Arial Narrow",sans-serif;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+th, td {
+    text-align: left;
+}
+
+td {
+    padding-bottom: 5px;
+}
+
+th, table { 
+    border-bottom: solid thin black;
+}
+
+    th:last-child, td:last-child {
+        text-align: right;
+    }
+
+tr.alternate {
+    background-color: lightgray;
+}
