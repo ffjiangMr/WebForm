@@ -20,15 +20,16 @@ namespace Data
     public partial class Default : System.Web.UI.Page
     {
 
-        public IEnumerable<Product> GetProductData([Control("ddList", "SelectedValue")] String filterSelect)
+        public IEnumerable<Product> GetProductData([Control("dSelect", "Value")] String filterSelect)
         {
             var productData = new Repository().Products;
             return (String.IsNullOrEmpty(filterSelect) ? "All" : filterSelect) == "All" ? productData : productData.Where(p => p.Category == filterSelect);
         }
 
-        public IEnumerable<String> GetCategories()
+        public IEnumerable<Product> GetCategories()
         {
-            return new String[] { "All" }.Concat(new Repository().Products.Select(p => p.Category).Distinct().OrderBy(c => c));
+            return new Product[] { new Product { Category = "All" } }.Concat((new Repository().Products.GroupBy(p => p.Category).Select(g => g.FirstOrDefault()).OrderBy(c => c.Category)));
+            //return new String[] { "All" }.Concat(new Repository().Products.Select(p => p.Category).Distinct().OrderBy(c => c));
             //.Select(c => new CategoryView()
             //{
             //    Name = c,

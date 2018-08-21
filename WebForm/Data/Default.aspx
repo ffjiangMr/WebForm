@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Data.Default" %>
-
+<%@ Register Assembly="Data" Namespace="Data.Controls" TagPrefix="CS" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -57,8 +57,16 @@
         </div>
         <div>
             Filter &nbsp<b>:</b>&nbsp 
-            <asp:DropDownList ID="ddList" SelectMethod="GetCategories" runat="server" ItemType="System.String">
-            </asp:DropDownList>
+            <CS:DataSelect ID="dSelect" ItemType="Data.Models.Product" SelectMethod="GetCategories" runat="server" >
+                <ItemTemplate>
+                    <option>
+                        <%#: Item.Category %>
+                    </option>
+                </ItemTemplate>
+            </CS:DataSelect>
+           <%-- <CS:DataSelect ID="dSelect" runat="server" SelectMethod="GetCategories" />--%>
+           <%-- <asp:DropDownList ID="ddList" SelectMethod="GetCategories" runat="server" ItemType="System.String">
+            </asp:DropDownList>--%>
             <%-- <select name="filterSelect">
                 <asp:Repeater SelectMethod="GetCategories" runat="server" ItemType="Data.CategoryView">
                     <ItemTemplate>
