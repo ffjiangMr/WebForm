@@ -59,11 +59,11 @@
         <div>
             Filter &nbsp<b>:</b>&nbsp 
             <CS:DataSelect ID="dSelect" ItemType="Data.Models.Product" SelectMethod="GetCategories" runat="server">
-                <itemtemplate>
+                <Itemtemplate>
                     <option <%# Container.GenerateSelect(Item.Category) %>>
                         <%#: Item.Category %>
                     </option>
-                </itemtemplate>
+                </Itemtemplate>
             </CS:DataSelect>
             <%-- <CS:DataSelect ID="dSelect" runat="server" SelectMethod="GetCategories" />--%>
             <%-- <asp:DropDownList ID="ddList" SelectMethod="GetCategories" runat="server" ItemType="System.String">

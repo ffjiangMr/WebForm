@@ -41,7 +41,6 @@ namespace Data.Controls
         {
             //dataArray = data.Cast<String>().ToArray();
             ViewState["data"] = data.Cast<Object>().ToArray();
-
         }
 
         protected override void RenderContents(HtmlTextWriter writer)
